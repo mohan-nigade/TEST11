@@ -1,0 +1,68 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300&family=Roboto:wght@300&display=swap');
+
+
+
+
+.mnj{
+    background: rgba(11, 0, 0, 0.623) /* Green background with 30% opacity */
+    
+
+    
+}
+
+.btn1{
+    
+    position: relative;
+    background-color:  #e50914;
+    border: none; 
+    font-size: 16px;
+    color: #FFFFFF;
+    padding: 10px;
+    width: 200px;
+    text-align: center;
+    transition-duration: 0.4s;
+    text-decoration: none;
+    overflow: hidden;
+    cursor: pointer;
+
+}
+.btn1:after {
+    content: "";
+    background: #f1f1f1;
+    display: block;
+    position: absolute;
+    padding-top: 300%;
+    padding-left: 350%;
+    margin-left: -20px !important;
+    margin-top: -120%;
+    opacity: 0;
+    transition: all 0.8s
+  }
+  .btn1:active:after {
+    padding: 0;
+    margin: 0;
+    opacity: 1;
+    transition: 0s
+  }  
+
+  a:link {
+    color: green;
+    background-color: transparent;
+    text-decoration: none;
+  }
+  a:visited {
+    color: red;
+    background-color: transparent;
+    text-decoration: none;
+  }
+  a:hover {
+    color: red;
+    background-color: transparent;
+    text-decoration: solid;
+  }
+  a:active {
+    color: rgb(249, 253, 252);
+    background-color: transparent;
+    text-decoration: underline;
+  }

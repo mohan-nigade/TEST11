@@ -1,0 +1,31 @@
+.active{
+    font-weight: bold;
+  
+}
+
+a:link {
+    color: green;
+    background-color: transparent;
+    text-decoration: none;
+  }
+  a:visited {
+    color: red;
+    background-color: transparent;
+    text-decoration: none;
+  }
+  a:hover {
+    color: red;
+    background-color: transparent;
+    text-decoration:wavy;
+  }
+  a:active {
+    color: rgb(221, 235, 235);
+    background-color: transparent;
+    text-decoration: solid;
+    
+  }
+
+.nav1{
+    background-color: black;
+}
+

@@ -1,0 +1,91 @@
+<br>
+
+<div class="container">
+    
+    
+    <div class="row">
+        <form [formGroup]="userFormInfo" #ref="ngForm" class="col-12 col-sm-8 col-md-6 mx-auto mnj p-4" (ngSubmit)="onFormSubmit()">
+            <h4 *ngIf="errStatus" class="text-center text-warning m-3">{{errMsg}}</h4>
+        
+            <!--username-->
+            
+            <div class="mb-3">
+                <label for="un">Username</label>
+                <input type="text"  id="un" class="form-control" formControlName="username" autocomplete="off">
+
+                <!--VALIDATION ERROR MSG FOR USERNAME-->
+                <div class="text-warning" *ngIf="username.invalid&&(username.dirty||username.touched)||ref.submitted">
+                    <p *ngIf="username.errors?.['required']">
+                        *Username is required
+                    </p>
+                    <p *ngIf="username.errors?.['minlength']">
+                     *minlength is required
+                 </p>
+                 </div>
+               
+            </div>
+
+             
+
+             <!---->
+             <div class="mb-3">
+                <label for="un">password</label>
+                <input type="password"  id="pwd" class="form-control" formControlName="password" autocomplete="off">
+                <div class="text-warning" *ngIf="password.invalid&&(password.dirty||password.touched)||ref.submitted">
+                    <p *ngIf="password.errors?.['required']">
+                        *Password is required
+                    </p>
+                    <p *ngIf="password.errors?.['minlength']">
+                     *minlength is required
+                 </p>
+                 </div>
+
+            </div>
+
+            <div class="mb-3">
+                <label for="un">Email</label>
+                <input type="email"  id="email" class="form-control" formControlName="email" autocomplete="off">
+                <div class="text-warning" *ngIf="email.invalid&&(email.dirty||email.touched)||ref.submitted">
+                    <p *ngIf="email.errors?.['required']">
+                        *Email is required
+                    </p>
+                    <p *ngIf="email.errors?.['minlength']">
+                     *minlength is required
+                 </p>
+                 </div>
+                
+
+            </div>
+
+            <div class="mb-3">
+                <label for="un">City</label>
+                <input type="text"  id="city" class="form-control" formControlName="city" autocomplete="off">
+                <div class="text-warning" *ngIf="city.invalid&&(city.dirty||city.touched)||ref.submitted">
+                    <p *ngIf="city.errors?.['required']">
+                        *city is required
+                    </p>
+                    <p *ngIf="city.errors?.['minlength']">
+                     *minlength is required
+                 </p>
+                 </div>
+
+            </div>
+              
+            <div class="mb-3">
+                <label for="un">File</label>
+                <input type="file"  id="pic" class="form-control" formControlName="profilePic"
+                
+                (change)="onFileSelect($event)">
+               
+                
+                
+
+            </div>
+
+
+
+            <button type="submit" class="btn btn-success btn1" >Sign Up</button>
+          
+        </form>
+    </div>
+</div>

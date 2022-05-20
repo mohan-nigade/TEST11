@@ -1,0 +1,67 @@
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+<div class="container">
+    
+    
+    <div class="row">
+        <form [formGroup]="userForm" #ref="ngForm" class="col-12 col-sm-8 col-md-6 mx-auto mnj p-4" (ngSubmit)="onFormSubmit()">
+            <h4 *ngIf="errStatus" class="text-center text-warning m-3">{{errMessage}}</h4>
+            <div class="mb-3">
+                <input type="radio" id="user" name="m" value="user" formControlName="userType" >
+                <label for="user" class="fw-bold">User</label> &nbsp;
+                <input type="radio" id="admin" name="m" value="Admin" formControlName="userType">
+                <label for="admin" class="fw-bold">Admin</label>
+
+            </div>
+            <!--username-->
+            
+            <div class="mb-3">
+                <label for="un"></label>
+                <input type="text"  id="un" class="form-control" formControlName="username" style="background:rgb(249, 249, 249) ;"
+                placeholder="Username">
+
+                <!--VALIDATION ERROR MSG FOR USERNAME-->
+                <div class="text-warning" *ngIf="username.invalid&&(username.dirty||username.touched)||ref.submitted">
+                       <p *ngIf="username.errors?.['required']">
+                           *Username is required
+                       </p>
+                       <p *ngIf="username.errors?.['minlength']">
+                        *minlength is required
+                    </p>
+                    </div>
+            </div>
+
+             
+
+             <!---->
+             <div class="mb-3">
+                <label for="un"></label>
+                <input type="password"  id="pwd" class="form-control" formControlName="password"
+                style="background:rgb(249, 249, 249) ;" placeholder="Password">
+                <div class="text-warning" *ngIf="password.invalid&&(password.dirty||password.touched)||ref.submitted">
+                    <p *ngIf="password.errors?.['required']">
+                        *Password is required
+                    </p>
+                    <p *ngIf="password.errors?.['minlength']">
+                     *minlength is required
+                 </p>
+                 </div>
+
+            </div>
+
+
+            <button type="submit" class="btn btn-success btn1" >Log In</button>
+            <br>
+            <br>
+            
+           <!--link to signup-->
+           <p class="lead text-center fw-bold">New to Netflix? <a routerLink="/signup" >Sign up now</a>.</p>
+        </form>
+    </div>
+</div>
