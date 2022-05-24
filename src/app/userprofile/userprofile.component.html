@@ -2,5 +2,39 @@
 <img src="{{user.profilePic}}" width="60px" alt="" class="mnj">
 
 
+<!---
+<button class="btn btn-success mt-5 d-block mx-auto" >Get Protected</button>-->
+<div class="container mt-5"> 
 
-<button class="btn btn-success mt-5 d-block mx-auto" (click)="getPrivateData()">Get Protected</button>
+    
+
+<button (click)="getAllProducts()">add-cart</button>
+<button>view-cart</button>
+
+
+<div class="row row-cols-1 row-cols-sm-3 row-cols--md-4">
+
+    <div class="col col-12 col-sm-4 col-md-3" *ngFor="let product of productsData">
+
+        <div class="card">
+
+            <img src="" alt="">
+
+            <div class="card-body">
+
+                <p class="text-info">product name-{{product.productname
+                }}</p>
+
+                <p class="text-info">Mfgcity-{{product.Mfgcity}}</p>
+
+            </div>
+
+            <button class="btn btn-danger" (click)="addToCart(product,user.username)">Add to Cart</button>
+
+        </div>
+
+    </div>
+
+</div>
+
+</div>

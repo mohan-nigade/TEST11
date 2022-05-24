@@ -9,6 +9,8 @@ import { UserService } from '../user.service';
 })
 export class UserprofileComponent implements OnInit {
   user;
+  productsData;
+  cartProducts;
 
   constructor(private authService:AuthenticationService,private userService:UserService) { }
 
@@ -23,5 +25,44 @@ export class UserprofileComponent implements OnInit {
       }
     })
   }
+
+  getAllProducts(){
+
+    this.userService.getProducts().subscribe({
+
+      next:(products)=>{
+
+        this.productsData = products.payload;
+
+        console.log(this.productsData)
+
+      }
+
+    })
+
+  }
+
+   // add to cart
+
+
+
+   addToCart(productObj,username){
+
+
+
+    this.userService.addproductToCart({productObj,username}).subscribe({
+
+      next:(res)=>{
+
+        this.cartProducts =res.data;
+
+      }
+
+    })
+
+  }
+
+
+  
 
 }

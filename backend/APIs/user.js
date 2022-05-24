@@ -2,6 +2,8 @@
 const exp=require('express')
 const userApp =exp.Router()
 const {getUsers,getUserById,createUser,updateUser,deleteUser,loginUser,getProtectedInfo}=require('../controller/userController');
+const{getProduct}=require('../controller/productController')
+const {addToCart}=require('../controller/cartController')
 require("dotenv").config()
 //
 const verifyToken = require("../middlewares/verifyToken")
@@ -57,7 +59,10 @@ userApp.get('/get-users',(req,res)=>{
 //get user by username
 userApp.get('/get-user/:username',getUserById)
 
+//////
+userApp.get('/get-products',getProduct)
 
+userApp.post('/addToCart',addToCart)
 
 /*
 //get user by id

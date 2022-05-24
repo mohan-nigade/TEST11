@@ -19,9 +19,11 @@ mongoClient.connect(dbUrl)
     //get collection objects
     let userCollectionObject=databaseObject.collection("usercollection");
     let productCollectionObject=databaseObject.collection("productcollection");
+    let cartCollectionObject=databaseObject.collection("cartCollection");
     //share collection objects to APIs
     app.set("userCollectionObject",userCollectionObject)
     app.set("productCollectionObject",productCollectionObject)
+    app.set("cartCollectionObject",cartCollectionObject)
     console.log('connected to DB succecssfully')
 })
 .catch(err=>console.log("err in connecting to Database".err))

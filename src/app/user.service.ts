@@ -17,4 +17,19 @@ export class UserService {
   getProtectedData():Observable<any>{
     return this.hc.get("/user/get-protected-data")
   }
+
+/* products */
+
+getProducts():Observable<any>{
+
+  return this.hc.get('/user/get-products');  
+
+}
+
+addproductToCart(productObj):Observable<any>{
+
+  return this.hc.post('user/addToCart',productObj)
+
+}
+
 }
